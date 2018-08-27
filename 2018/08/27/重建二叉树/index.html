@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>重建二叉树 | Yunnis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="/*!  @file RebulidingABinaryTree @brief 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。* @author xuan @date 2018-08-27*/#include">
+<meta name="keywords" content="zx.123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重建二叉树">
+<meta property="og:url" content="http://yoursite.com/2018/08/27/重建二叉树/index.html">
+<meta property="og:site_name" content="Yunnis">
+<meta property="og:description" content="/*!  @file RebulidingABinaryTree @brief 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。* @author xuan @date 2018-08-27*/#include">
+<meta property="og:locale" content="cns">
+<meta property="og:updated_time" content="2018-08-27T07:04:47.458Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重建二叉树">
+<meta name="twitter:description" content="/*!  @file RebulidingABinaryTree @brief 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。* @author xuan @date 2018-08-27*/#include">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">Yunnis</div>
+      
+        <div id="subtitle">-blog</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">Yunnis</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-重建二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/27/重建二叉树/" class="article-date">
+  <time datetime="2018-08-27T07:04:29.000Z" itemprop="datePublished">2018-08-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      重建二叉树
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>/*!</p>
+<ul>
+<li>@file RebulidingABinaryTree</li>
+<li>@brief 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</li>
+<li>例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。<br>*</li>
+<li>@author xuan</li>
+<li>@date 2018-08-27<br>*/<br>#include <iostream><br>#include <vector><br>using namespace std;</vector></iostream></li>
+</ul>
+<p>/// @brief 树节点定义<br>///<br>///  left right 左右节点<br>///  x 节点的值<br>struct TreeNode<br>{<br>    int val;<br>    TreeNode <em>left;<br>    TreeNode </em>right;<br>    TreeNode ( int x )<br>            : val ( x ), left ( NULL ), right ( NULL ) {}<br>};</p>
+<p>class Solution {<br>public:<br>    /// @brief 通过先序 和 中序 重建二叉树<br>    ///<br>    /// @param pre   先序序列<br>    /// @param vin   中序序列<br>    /// @return res  重建完的树<br>    TreeNode<em> reConstructBinaryTree(vector<int> pre,vector<int> vin) {<br>        if ( pre.size() == 0 || vin.size() == 0 )<br>        {<br>            return NULL;<br>        }<br>        int i;<br>        // 先序遍历的0号位 肯定是树的根节点<br>        TreeNode </int></int></em>res = new TreeNode( pre[0] );<br>        // 在中序遍历中找到根节点<br>        for ( i = 0; i &lt; vin.size(); i++ )<br>        {<br>            if( pre[0] == vin[i] )<br>            {<br>                break;<br>            }<br>        }<br>        // 分出左右子树<br>        vector<int> leftpre, leftvin, rightpre, rightvin;<br>        // left<br>        for ( int j = 0; j &lt; i; j++)<br>        {<br>            leftpre.push_back( pre[j+1] ); //先序第一个节点为根节点<br>            leftvin.push_back( vin[j] );<br>        }<br>        // right<br>        for ( int j = i + 1; j &lt; pre.size(); j++)<br>        {<br>            rightpre.push_back( pre[j] );<br>            rightvin.push_back( vin[j] );<br>        }<br>        // 遍历左子树 和 右子树<br>        res-&gt;left = reConstructBinaryTree( leftpre, leftvin );<br>        res-&gt;right = reConstructBinaryTree( rightpre, rightvin );<br>        return res;<br>    }<br>};</int></p>
+<p>/// @brief 先序输出树<br>/// @param Root  要输出树的根节点<br>void printTree ( TreeNode *Root )<br>{<br>    if ( Root == NULL )<br>        return ;<br>    cout &lt;&lt; Root-&gt;val &lt;&lt; “ “ ;<br>    printTree ( Root-&gt;left );<br>    printTree ( Root-&gt;right );<br>}<br>/// @brief 输出vector<br>/// @param v  待输出的vector<br>void PrintVectorint ( vector<int> v )<br>{<br>    int size = v.size();<br>    for ( int i = 0; i &lt; size; i++ )<br>        cout &lt;&lt; v[i] &lt;&lt; “ “;<br>    cout &lt;&lt; endl;<br>}</int></p>
+<p>int main()<br>{<br>    TreeNode *a = new TreeNode(1);<br>    a-&gt;left = new TreeNode(2);<br>    a-&gt;right = new TreeNode(3);<br>    a-&gt;left-&gt;left = new TreeNode(4);<br>    a-&gt;left-&gt;left-&gt;right = new TreeNode(7);<br>    a-&gt;right-&gt;left = new TreeNode(5);<br>    a-&gt;left-&gt;right = new TreeNode(6);<br>    int pa[8] = { 1, 2, 4, 7, 3, 5, 6, 8 };<br>    int pb[8] = { 4, 7, 2, 1, 5 ,3, 8, 6 };<br>    vector<int> pre( pa, pa+8 );<br>    vector<int> vin;<br>    vin.insert( vin.begin(), pb, pb+8 );<br>    PrintVectorint( pre );<br>    PrintVectorint( vin );<br>    Solution s;<br>    printTree( s.reConstructBinaryTree( pre, vin ) );<br>    cout &lt;&lt; endl;<br>    cout &lt;&lt; “Hello world!” &lt;&lt; endl;<br>    return 0;<br>}</int></int></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/08/27/重建二叉树/" data-id="cjlbxtvt60001pkvya0qeistc" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/26/复杂链表的复制/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">复杂链表的复制</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Xuan<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>
